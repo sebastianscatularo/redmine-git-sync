@@ -1,7 +1,7 @@
 redmine-git-sync
 ================
 
-# OpenShift configuration
+## OpenShift configuration
 
 In the redmine gear, into the data dir, create an bash script named
 
@@ -19,4 +19,21 @@ Using OpenShift console:
 
 ```bash 
  rhc env set GIT_SSH=${OPENSHIFT_DATA_DIR}git_ssh_client.sh --app redmine
+```
+
+Next, we are beable to clone our git repositories from GitHub or Bitbucket for example as a mirror of that ones.
+Running in the OPENSHIFT_DATA_DIR the following command to do this last one.
+
+```bash
+ git clone --mirror https://github.com/abloos/redmine-git-sync.git
+```
+
+Now we can fetch changes into the mirrired repository after each commit, setting the correct hook in GitHub or Bitbucket
+To fetch the changes, we need add another script encharge to do that like this.
+
+```bash
+  #!/bin/bash
+  cd ${OPENSHIFT_DATA_DIR}redmine-git-sync.git
+  git remote update
+  git fetch --all
 ```
