@@ -33,7 +33,12 @@ To fetch the changes, we need add another script encharge to do that like this.
 
 ```bash
   #!/bin/bash
-  cd ${OPENSHIFT_DATA_DIR}redmine-git-sync.git
-  git remote update
+  cd ${OPENSHIFT_DATA_DIR}repos/redmine-git-sync.git
   git fetch --all
+```
+
+And finally we need add another enviroment var named SYNC_COMMAND that point to the ubication of the last script like:
+
+```bash
+ rhc env set SYNC_COMMAND=${OPENSHIFT_DATA_DIR}sync_script.sh --app redmine
 ```
