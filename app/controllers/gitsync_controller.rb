@@ -1,4 +1,4 @@
-class GitSyncController < ApplicationController
+class GitsyncController < ApplicationController
   unloadable
   def sync
 
