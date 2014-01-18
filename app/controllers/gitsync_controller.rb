@@ -1,4 +1,4 @@
-class BitbucketsyncController < ApplicationController
+class GitSyncController < ApplicationController
   unloadable
   def sync
 
