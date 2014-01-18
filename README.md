@@ -1,7 +1,7 @@
 redmine-git-sync
 ================
 
-.h1 OpenShift configuration
+# OpenShift configuration
 
 In the redmine gear, into the data dir, create an bash script named
 
