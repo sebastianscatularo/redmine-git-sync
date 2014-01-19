@@ -1,4 +1,4 @@
-redmine-git-sync
+rdmine-git-sync
 ================
 
 ## OpenShift configuration
@@ -11,7 +11,7 @@ And put into this script the next commands:
 
 ```bash
  #!/bin/bash
- ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ${OPENSHIFT_DATA_DIR}.ssh/id_rsa $1 $2
+ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ${OPENSHIFT_APP_SSH_KEY} $1 $2
 ```
 
 Next that, setup and enviroment variable that named GIT_SSH and fillin with the path at the ssh_git_client.sh script
