@@ -33,7 +33,8 @@ To fetch the changes, we need add another script encharge to do that like this.
 
 ```bash
   #!/bin/bash
-  cd ${OPENSHIFT_DATA_DIR}repos/redmine-git-sync.git
+  REPO_NAME=$1
+  cd ${OPENSHIFT_DATA_DIR}repos/${REPO_NAME}.git
   git fetch --all
 ```
 
